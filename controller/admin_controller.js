@@ -175,9 +175,9 @@ const getSingleUser = async (req, res) => {
 }
 
 const getPrductOneCatagory = async (req,res)=>{
-    const type = req.params.type;
-    const data = await Product.find({type});
-    // const data = await Product.find({type: type}).selected(type);
+    let type = req.params.type;
+    type = type.replace(type[0], type[0].toUpperCase());
+    const data = await Product.find({type:type});
     res.status(200).json({ data });
 
 }
