@@ -1,10 +1,6 @@
 const { Schema, model } = require("mongoose");
 
 const CatagorySchema = new Schema({
-    no: {
-        type: Number,
-        required: true
-    },
     name: {
         type: String,
         required: true
